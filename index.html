@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Holiday 2017</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+		<div id="app">
+			<transition name="fade">
+				<main id="app-content" v-if="isLoaded">
+					<div class="card title-card center-all">
+						<h1 class="huge-header">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 331" class="logo" width="100" aria-hidden="true"><title>Paul Herz</title><path d="M145.4 72.6H74.8v181.8h44.6v-50.7H146c29.6 0 51.5-5.2 65.9-15.6s21.6-26.8 21.6-49.3c0-22.4-7-39.1-21-49.9-14-10.9-36.4-16.3-67.1-16.3zm4 95.9h-30v-61.1h25.5c14.7 0 25.5 2.2 32.5 6.6 7 4.4 10.4 11.9 10.4 22.4s-2.7 18.5-8 23.9c-5.4 5.5-15.5 8.2-30.4 8.2zm243.2-20h-79.5V72.6h-44.6v181.8h44.6v-71.5h79.5v71.5h44.6V72.6h-44.6v75.9z"/><path d="M0 0v331h512V0H0zm477.9 296.9H34.1V34.1h443.7l.1 262.8z"/></svg>
+						</h1>
+						<h1 class="huge-header">Happy Holidays</h1>
+						<p>These are my must-haves for 2017.</p>
+					</div>
+
+					<div class="card center-all" v-for="item in items">
+						<div>
+							<h2 class="product-title">{{item.title}}</h2>
+							<p>
+								<strike>${{item.oldPrice}}</strike> ${{item.newPrice}} • From {{item.manufacturer}}
+							</p>
+							<p>
+								Sold by <a target="_blank" :href="item.vendorURL">{{item.vendorName}}</a>
+							</p>
+							<p v-if="item.style">
+								Style: {{item.style}}
+							</p>
+						</div>
+						<div class="img">
+							<img :src="item.imageURL">
+						</div>
+					</div><!-- card -->
+				</main><!-- #app-content -->
+			</transition>
+		</div><!-- #app -->
+		<script src="https://unpkg.com/vue"></script>
+		<script src="app.js"></script>
+</html>

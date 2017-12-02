@@ -1,0 +1,147 @@
+@keyframes snow {
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+	100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+@font-face {
+	font-family: MerriweatherWeb;
+	src: url(fonts/Merriweather-Regular.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: FuturaWeb;
+	src: url(fonts/Futura-Medium.ttf);
+	font-weight: 300;
+}
+
+* { 
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* VUE */
+.fade-enter-active, .fade-leave-active {
+	transition: opacity 1s ease-in-out;
+}
+.fade-enter, .fade-leave-active {
+	opacity: 0;
+}
+/* END VUE */
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: MerriweatherWeb;
+	font-size: 17px;
+	color: #333;
+	background-color: #e80439;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: FuturaWeb;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.card {
+	min-height: 100vh;
+	width: 100%;
+	padding: 1.5rem;
+	background-color: #fff;
+}
+
+.card:nth-child(odd) {
+	background-color: #f3f3f3;
+}
+
+.card.title-card {
+	background-color: #e80439;
+	color: #fff;
+	/* double border */
+	box-shadow:
+	inset  1rem     0 0 #e80439,
+	inset -1rem     0 0 #e80439,
+	inset     0  1rem 0 #e80439,
+	inset     0 -1rem 0 #e80439,
+
+	inset  1.2rem       0 0 #fff,
+	inset -1.2rem       0 0 #fff,
+	inset       0  1.2rem 0 #fff,
+	inset       0 -1.2rem 0 #fff
+	;
+	/*snow*/
+	background-image: url(img/snow/s1.png), url(img/snow/s2.png), url(img/snow/s3.png);
+	animation: snow 10s linear infinite;
+}
+
+.logo {
+	width: 5rem;
+}
+
+.logo path {
+	fill: #fff;
+}
+
+a:link, a:visited {
+	color: #333;
+	text-decoration: none;
+	position: relative;
+	z-index: 0;
+}
+
+a:after {
+	width: 100%;
+	height: 0;
+	position: absolute;
+	bottom: 0.12em;
+	left: 0;
+	border-bottom: 0.2em solid rgba(0,152,198,0.3);
+	content: '';
+	z-index: -1;
+}
+
+.center-all {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.img img {
+	max-width: 100%;
+	max-height: 180px;
+	width: auto;
+	height: auto;
+	margin: 1rem 0;
+}
+
+.product-title {
+	font-size: 1.2rem;
+}
+
+@media screen and (min-width: 600px) {
+	html, body {
+		font-size: 20px;
+	}
+	.img img {
+		max-height: 250px;
+	}
+	.product-title {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	html, body {
+		font-size: 22px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	html, body {
+		font-size: 24px;
+	}
+}
