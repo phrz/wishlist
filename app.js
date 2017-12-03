@@ -1,4 +1,5 @@
 var items = [
+/*
 { 
 	title: '400 Series 71-inch Executive Desk',
 	oldPrice: 1199,
@@ -19,6 +20,7 @@ var items = [
 	style: 'XBR65X900E',
 	imageURL: 'img/tv.png'
 },
+*/
 { 
 	title: '2-Bay Network Attached Storage DiskStation',
 	oldPrice: 300,
